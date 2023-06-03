@@ -12,6 +12,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './elements/pages/home/home.component';
 import { AddComponent } from './elements/pages/users/add/add.component';
 import { ListComponent } from './elements/pages/users/list/list.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient} from "@angular/common/http";
+import { UsersService} from "./services/users.service";
+import { HttpClientModule } from '@angular/common/http';
+
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -28,9 +39,23 @@ import { ListComponent } from './elements/pages/users/list/list.component';
     NgbModule,
     NgSelectModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

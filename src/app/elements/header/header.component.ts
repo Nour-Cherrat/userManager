@@ -11,4 +11,5 @@ export class HeaderComponent {
     { id:1, name:'EN'},
     { id:2, name:'FR'}
   ];
+  //protected readonly onlanguagechange = onlanguagechange;
 }
