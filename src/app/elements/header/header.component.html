@@ -6,7 +6,22 @@
     <p>Ech-cherrate Nour El Houda</p>
   </div>
   <nav class="site-language">
-      <ng-select [items]="languages" bindLabel="name" bindValue="id" ></ng-select>
+      <ng-select [(ngModel)]="selectedLanguage"
+                 (ngModelChange)="changeLanguage()"
+                 [items]="languages"
+                 bindLabel="name"
+                 bindValue="value" >
+      </ng-select>
+
+
   </nav>
+
+  <select [(ngModel)]="selectedLanguage" (ngModelChange)="changeLanguage()">
+    <option value="en">English</option>
+    <option value="fr">French</option>
+    <!-- Add more language options as needed -->
+  </select>
+
+
 
 </header>

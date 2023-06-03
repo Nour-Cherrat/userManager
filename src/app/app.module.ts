@@ -17,6 +17,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient} from "@angular/common/http";
 import { UsersService} from "./services/users.service";
 import { HttpClientModule } from '@angular/common/http';
+import {RouterModule} from "@angular/router";
 
 
 // AoT requires an exported function for factories
@@ -40,7 +41,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgSelectModule,
     FormsModule,
     FontAwesomeModule,
-    BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
@@ -49,7 +49,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: httpTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    }),
+    RouterModule.forRoot([
+      // Define your routes here
+    ])
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]
