@@ -9,12 +9,18 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './elements/header/header.component';
 import { MenuComponent } from './elements/menu/menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './elements/pages/home/home.component';
+import { AddComponent } from './elements/pages/users/add/add.component';
+import { ListComponent } from './elements/pages/users/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    HomeComponent,
+    AddComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
