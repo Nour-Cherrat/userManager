@@ -4,7 +4,7 @@
   "sidebar.home":"Accueil",
   "sidebar.manageUsers":"Gestion des utilisateurs",
 
-  "welcome.message":"Bienvenue dans cette application de test!",
+  "welcome.message":"Bienvenue dans cette application de test !",
 
   "user.addUser": "+ Ajouter un utilisateur",
   "user.id":"Id",
