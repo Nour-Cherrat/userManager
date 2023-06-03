@@ -45,4 +45,8 @@ export class ListComponent {
     }
   }
 
+  public delete(index: number) {
+    this.users.slice(index, 1);
+  }
+
 }

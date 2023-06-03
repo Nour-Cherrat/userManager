@@ -1,22 +1,22 @@
 <div class="users w-100">
   <div class="row w-100" *ngIf="users">
-    <h2 class="" [translate]="'users.list'">List of Users</h2>
+    <h2 class="" [translate]="'user.title'">List of Users</h2>
     <div class="text-end mb-3">
-      <button type="button" class="btn btn-success" [translate]="'header.addUser'">+ Add a user</button>
+      <button type="button" class="btn btn-success" [translate]="'user.addUser'"></button>
     </div>
     <table class="table table-striped">
       <thead>
       <tr>
-        <th scope="col" [translate]="'users.id'">ID</th>
-        <th scope="col" [translate]="'users.avatar'">Avatar</th>
-        <th scope="col" [translate]="'users.firstName'">First Name</th>
-        <th scope="col" [translate]="'users.lastName'">Last Name</th>
-        <th scope="col" [translate]="'users.email'">Email Address</th>
-        <th scope="col" [translate]="'users.action'">-</th>
+        <th scope="col" [translate]="'user.id'">ID</th>
+        <th scope="col" [translate]="'user.avatar'">Avatar</th>
+        <th scope="col" [translate]="'user.firstName'">First Name</th>
+        <th scope="col" [translate]="'user.lastName'">Last Name</th>
+        <th scope="col" [translate]="'user.email'">Email Address</th>
+        <th scope="col">-</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of users; index as i">
         <th scope="row">{{ user.id }}</th>
         <td>
           <img [src]="user.avatar" alt="User Avatar" class="rounded-circle" width="30" height="30" />
@@ -26,12 +26,13 @@
         <td><a href="#">{{ user.email }}</a></td>
         <td>
           <div ngbDropdown class="dropdown">
-            <button ngbDropdownToggle class="btn btn-light dropdown-toggle-text-only" type="button" id="dropdownMenuButton1" aria-expanded="false" [translate]="'users.action'">
+            <!-- <span (click)="delete(i)"><i class="fa fa-trash btn btn-danger"></i></span> -->
+            <button ngbDropdownToggle class="btn btn-light dropdown-toggle-text-only" type="button" id="dropdownMenuButton1" aria-expanded="false" [translate]="'user.action'">
               Action
             </button>
             <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
-              <li><a ngbDropdownItem routerLink="/users" [translate]="'users.action.update'">Update</a></li>
-              <li><a ngbDropdownItem href="#" [translate]="'users.action.delete'">Delete</a></li>
+              <li><a ngbDropdownItem routerLink="/users" [translate]="'user.update'">Update</a></li>
+              <li><a ngbDropdownItem (click)="delete(i)" [translate]="'user.delete'">Delete</a></li>
             </ul>
           </div>
         </td>
@@ -42,7 +43,7 @@
     <nav class="d-flex justify-content-center">
       <ul class="pagination">
         <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous" (click)="previousPage()" [translate]="'pagination.previous'">
+          <a class="page-link" href="#" aria-label="Previous" (click)="previousPage()">
             <span aria-hidden="true">&laquo;</span>
             <span class="sr-only"></span>
           </a>
@@ -51,7 +52,7 @@
           <a class="page-link" href="#" (click)="getPage(page)">{{ page }}</a>
         </li>
         <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next" (click)="nextPage()" [translate]="'pagination.next'">
+          <a class="page-link" href="#" aria-label="Next" (click)="nextPage()">
             <span aria-hidden="true">&raquo;</span>
             <span class="sr-only"></span>
           </a>
@@ -60,7 +61,4 @@
     </nav>
   </div>
 
-  <div *ngIf="!users">
-    <p class="mt-4" [translate]="'users.loading'">Loading users...</p>
-  </div>
 </div>
