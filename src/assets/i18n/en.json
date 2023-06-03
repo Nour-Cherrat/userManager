@@ -1,20 +1,32 @@
 {
-  "header.title": "Angular training",
+  "header" : {
+    "title" : "Angular Training",
+    "description" : "Presented by : Prof Oussama BOUISFI"
+  },
 
-  "sidebar.home":"Home",
-  "sidebar.manageUsers":"Manage users",
+  "sidebar" : {
+    "home" : "Home",
+    "manage_users" : "Manage users"
+  },
 
-  "welcome.message":"Welcome to this test application !",
+  "pages" : {
 
-  "user.addUser": "+ Add a user",
-  "user.id":"Id",
-  "user.avatar" :"Avatar",
-  "user.firstName":"First name",
-  "user.lastName":"Last name",
-  "user.email":"Email adress",
-  "user.update": "Update",
-  "user.delete": "Delete",
-  "user.action": "Action",
-  "user.title": "Manage users"
+    "home" : {
+      "message" : "Welcome to this test application !"
+    },
+
+    "manage_users" : {
+      "title": "Manage users",
+      "addUser": "+ Add a user",
+      "id":"Id",
+      "avatar" :"Avatar",
+      "firstName":"First name",
+      "lastName":"Last name",
+      "email":"Email adress",
+      "update": "Update",
+      "delete": "Delete",
+      "action": "Action"
+    }
+
+  }
 }
-

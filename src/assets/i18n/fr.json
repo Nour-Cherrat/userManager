@@ -1,20 +1,32 @@
 {
-  "header.title": "Formation Angular",
+  "header" : {
+    "title" : "Formation Angular",
+    "description" : "Presenté par : Prof Oussama BOUISFI"
+  },
 
-  "sidebar.home":"Accueil",
-  "sidebar.manageUsers":"Gestion des utilisateurs",
+  "sidebar" : {
+    "home" : "Accueil",
+    "manage_users" : "Gestion des utilisateurs"
+  },
 
-  "welcome.message":"Bienvenue dans cette application de test !",
+  "pages" : {
 
-  "user.addUser": "+ Ajouter un utilisateur",
-  "user.id":"Id",
-  "user.avatar" :"Avatar",
-  "user.firstName":"Prenom",
-  "user.lastName":"Nom",
-  "user.email":"Adresse e-mail",
-  "user.update": "Modifier",
-  "user.delete": "Supprimer",
-  "user.action": "Action",
-  "user.title": "Gestion des utilisateurs"
+    "home" : {
+      "message" : "Bienvenue sur cette application de test !"
+    },
+
+    "manage_users" : {
+      "addUser": "+ Ajouter un utilisateur",
+      "id":"Id",
+      "avatar" :"Avatar",
+      "firstName":"Prénom",
+      "lastName":"Nom",
+      "email":"Adresse e-mail",
+      "update": "Modifier",
+      "delete": "Supprimer",
+      "action": "Action",
+      "title": "Gestion des utilisateurs"
+    }
+
+  }
 }
-

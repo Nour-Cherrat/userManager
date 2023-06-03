@@ -1,12 +1,12 @@
 <div class="d-flex" id="wrapper">
-
   <div class="bg-light border-right" id="sidebar-wrapper">
     <div class="list-group list-group-flush">
-      <a routerLink="/home" class="list-group-item list-group-item-action" [translate]="'sidebar.home'">Home</a>
-      <a routerLink="/users" class="list-group-item list-group-item-action" [translate]="'sidebar.manageUsers'">Manage users</a>
+      <a routerLink="/home" class="list-group-item list-group-item-action">
+        {{ 'sidebar.home' | translate }}</a>
+      <a routerLink="/users" class="list-group-item list-group-item-action">
+        {{ 'sidebar.manage_users' | translate }}</a>
     </div>
   </div>
-
 </div>
 
 
