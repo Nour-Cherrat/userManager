@@ -1,0 +1,70 @@
+<div class="users w-100">
+  <div class="row w-100" *ngIf="users">
+
+    <h2 class="">{{ 'pages.manage_users.title' | translate }}</h2>
+
+    <div class="text-end mb-3">
+      <button type="button" class="btn btn-success" routerLink="/addUser">
+        {{ 'pages.manage_users.addUser' | translate }}</button>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">{{ 'pages.manage_users.id' | translate }}</th>
+        <th scope="col">{{ 'pages.manage_users.avatar' | translate }}</th>
+        <th scope="col">{{ 'pages.manage_users.firstName' | translate }}</th>
+        <th scope="col">{{ 'pages.manage_users.lastName' | translate }}</th>
+        <th scope="col">{{ 'pages.manage_users.email' | translate }}</th>
+        <th scope="col"> - </th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let user of users; index as i">
+        <th scope="row">{{ user.id }}</th>
+        <td>
+          <img [src]="user.avatar" alt="User Avatar" class="rounded-circle" width="30" height="30" />
+        </td>
+        <td>{{ user.first_name }} </td>
+        <td>{{ user.last_name }}</td>
+        <td><a href="#">{{ user.email }}</a></td>
+        <td>
+          <div ngbDropdown class="dropdown">
+            <!-- <span (click)="delete(i)"><i class="fa fa-trash btn btn-danger"></i></span> -->
+            <button ngbDropdownToggle class="btn btn-light dropdown-toggle-text-only" type="button" id="dropdownMenuButton1" aria-expanded="false">
+              {{ 'pages.manage_users.action' | translate }}</button>
+            <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+              <li><a ngbDropdownItem routerLink="/users">
+                {{ 'pages.manage_users.update' | translate }}</a></li>
+              <li><a ngbDropdownItem (click)="delete(i)">
+                {{ 'pages.manage_users.delete' | translate }}</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <nav class="d-flex justify-content-center">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" routerLink="/users" aria-label="Previous" (click)="previousPage()">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only"></span>
+          </a>
+        </li>
+        <li class="page-item" *ngFor="let page of totalPages">
+          <a class="page-link" routerLink="/users" routerLinkActive="active-page" (click)="getPage(page)">{{ page }}</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" routerLink="/users" aria-label="Next" (click)="nextPage()">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+</div>
