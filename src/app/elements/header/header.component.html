@@ -5,12 +5,21 @@
   <div class="site-title">
     <p>{{ 'header.description' | translate }}</p>
   </div>
-  <nav class="site-language">
-      <ng-select [(ngModel)]="selectedLanguage"
-                 (ngModelChange)="changeLanguage()"
-                 [items]="languages"
+  <div class="site-language">
+      <ng-select  [(ngModel)]="this.mainService.currentLanguage"
+                 (change)="changeLanguage($event)"
+                 [items]="this.mainService.supportedLanguages"
+                 [clearable]="false"
+                 [searchable]="false"
                  bindLabel="name"
                  bindValue="value" >
+        <ng-template ng-label-tmp let-item="item">
+          <img loading="lazy" class="lang-img" [src]="item.img"/>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item">
+          <img loading="lazy" class="lang-img" [src]="item.img"/>
+          <span class="text-uppercase">  {{item.value}}</span>
+        </ng-template>
       </ng-select>
-  </nav>
+  </div>
 </header>

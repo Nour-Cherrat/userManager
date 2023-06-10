@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
+import {MainService} from "../../services/main.service";
+
+type languages = {
+    value: string,
+    img: string
+}
 
 @Component({
   selector: 'app-header',
@@ -8,26 +14,24 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class HeaderComponent {
 
-  languages = [
-    { value:'en', name:'EN'},
-    { value:'fr', name:'FR'}
-  ];
+
   //protected readonly onlanguagechange = onlanguagechange;
 
-  selectedLanguage: string;
+  // selectedLanguage: string;
 
-  constructor(private translateService: TranslateService) {
-    this.selectedLanguage = 'en'; // Set the default language
+  constructor(private translateService: TranslateService,
+              public mainService: MainService) {
+    // this.selectedLanguage = 'en'; // Set the default language
 
     // Add supported languages
-    this.translateService.addLangs(['en', 'fr']);
+    // this.translateService.addLangs(['en', 'fr']);
 
     // Set the default language
-    this.translateService.setDefaultLang('en');
+    // this.translateService.setDefaultLang('en');
   }
 
-  changeLanguage() {
-    this.translateService.use(this.selectedLanguage);
+  changeLanguage(selectedLanguage: languages) {
+    this.translateService.use(selectedLanguage.value);
   }
 
 }

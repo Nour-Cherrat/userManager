@@ -41,19 +41,45 @@ p {
 
 .site-language {
   float: right;
-  width: 100px;
+  width: 70px;
   margin-top: 1em
 }
 
-/*
-.site-navigation ul, li {
-  margin: 0;
-  padding: 0;
-}
+.site-language {
+  display: inherit;
+  align-items: center;
+  margin-right: 15px;
 
-.site-navigation li {
-  display: inline-block;
-  margin: 1.4em 1em 1em 1em;
-}
+  .ng-select-container {
+    background-color: transparent !important;
+    border: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 
-*/
+  .ng-select .ng-select-container:hover,
+  .ng-select.ng-select-focused,
+  .ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  ng-select {
+    .ng-dropdown-panel {
+      font-size: 12px;
+      width: 62px;
+
+      .lang-img {
+        margin-right: 5px;
+      }
+    }
+
+    .lang-img {
+      width: 17px;
+      height: 17px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}
