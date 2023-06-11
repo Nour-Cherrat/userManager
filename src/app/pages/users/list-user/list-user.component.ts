@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import { UsersService } from "../../../services/users.service";
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  selector: 'app-list-user',
+  templateUrl: './list-user.component.html',
+  styleUrls: ['./list-user.component.scss']
 })
-export class ListComponent {
+export class ListUserComponent {
 
   users: any[] = [];
   currentPage = 1;
   totalPages: number[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private usersService: UsersService) {
     this.getUsers(this.currentPage);
   }
 
@@ -22,6 +24,7 @@ export class ListComponent {
         this.users = response.data;
         this.totalPages = Array.from({ length: response.total_pages }, (_, index) => index + 1);
       });
+
   }
 
   getPage(page: number) {

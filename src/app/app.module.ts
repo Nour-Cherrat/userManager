@@ -5,13 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './elements/header/header.component';
 import { MenuComponent } from './elements/menu/menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeComponent } from './elements/pages/home/home.component';
-import { AddComponent } from './elements/pages/users/add/add.component';
-import { ListComponent } from './elements/pages/users/list/list.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AddUserComponent } from './pages/users/add-user/add-user.component';
+import { ListUserComponent } from './pages/users/list-user/list-user.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient} from "@angular/common/http";
@@ -31,8 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     MenuComponent,
     HomeComponent,
-    AddComponent,
-    ListComponent
+    AddUserComponent,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     FontAwesomeModule,
     HttpClientModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {

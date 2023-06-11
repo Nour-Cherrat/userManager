@@ -1,0 +1,40 @@
+<h2 class="">{{ 'pages.add_user.title' | translate }}</h2>
+
+<div class="card">
+  <div class="card-header"></div>
+
+  <div class="card-body">
+
+    <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
+
+
+      <div class="row">
+        <div class="col-6">
+          <label>Nom :</label>
+          <input class="form-control" name="nom" type="text" placeholder="Nom" formControlName="lastName">
+        </div>
+
+        <div class="col-6">
+          <label>Prenom :</label>
+          <input class="form-control" name="prenom" type="text" placeholder="Prenom" formControlName="firstName">
+        </div>
+      </div>
+
+      <label>Email :</label>
+      <input class="form-control" name="email" type="email" placeholder="email" formControlName="email">
+
+      <label>Travail :</label>
+      <input class="form-control" name="travail" type="text" placeholder="Travail" formControlName="job">
+
+      <label>N° de telephone :</label>
+      <input class="form-control" name="tel" type="text" placeholder="N° de telephone" formControlName="numTel">
+
+      <input class="form-control save" type="submit" value="Enregistrer" [disabled]="">
+
+    </form>
+  </div>
+
+  <div class="card-footer"></div>
+
+</div>
+

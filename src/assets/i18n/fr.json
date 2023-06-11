@@ -26,6 +26,14 @@
       "delete": "Supprimer",
       "action": "Action",
       "title": "Gestion des utilisateurs"
+    },
+
+    "add_user" : {
+      "title" : "Ajouter un nouveau utilisateur"
+    },
+
+    "update_user" : {
+      "title" : "Mettre à jour"
     }
 
   }
